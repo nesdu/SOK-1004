@@ -83,15 +83,13 @@ df %>%
 
   mutate(CI = co2/gdp) %>% 
 
-  filter(country %in% list)  %>% 
+  filter(country == list)  %>% 
 
   filter(year %in% c(1850:2020)) %>% 
 
   ggplot(aes(x = year, y = CI, color = country)) %>% 
 
-  + geom_point() %>%
-
-  + geom_smooth(se = FALSE) %>% 
+  + geom_line() %>% 
 
   + theme_bw()
 
